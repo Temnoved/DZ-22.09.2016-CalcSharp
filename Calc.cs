@@ -58,7 +58,14 @@ namespace DZCalcSharp
                 }
                 if (this.chSymbols[i + 1] == '/')
                 {
-                    dTempRes2 = (double)((double.Parse(this.strNums[i + 1]) / (double.Parse(this.strNums[i + 2]))));
+                    if ((double.Parse((this.strNums[i + 2])) == 0))
+                    {
+                        throw new Exception("Деление на ноль");
+                    }
+                    else
+                    {
+                        dTempRes2 = (double)((double.Parse(this.strNums[i + 1]) / (double.Parse(this.strNums[i + 2]))));
+                    }                    
                 }
                 if (this.chSymbols[i] == '+')
                 {
@@ -80,7 +87,14 @@ namespace DZCalcSharp
                 }
                 if (this.chSymbols[i] == '/')
                 {
-                    dTempRes1 = (double)((double.Parse(this.strNums[i]) / (double.Parse(this.strNums[i + 1]))));
+                    if ((double.Parse(this.strNums[i + 1])) == 0)
+                    {
+                        throw new Exception("Деление на ноль");
+                    }
+                    else
+                    {
+                        dTempRes1 = (double)((double.Parse(this.strNums[i]) / (double.Parse(this.strNums[i + 1]))));
+                    }                    
                 }
                 if (this.chSymbols[i] == '+')
                 {
@@ -104,7 +118,15 @@ namespace DZCalcSharp
                 }
                 if (this.chSymbols[i] == '/')
                 {
-                    dTempRes1 /= double.Parse(this.strNums[i + 1]);
+                    if ((double.Parse(this.strNums[i + 1])) == 0)
+                    {
+                        throw new Exception("Деление на ноль");
+                    }
+                    else
+                    {
+                        dTempRes1 /= double.Parse(this.strNums[i + 1]);
+                    }
+                    
                 }
                 if (this.chSymbols[i] == '+')
                 {
